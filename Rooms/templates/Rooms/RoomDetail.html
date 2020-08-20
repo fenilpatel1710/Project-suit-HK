@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+    {% load static %}
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />               
+    <title>Dashboard - SB Admin</title>
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+    <link href="{% static 'plugins/fontawesome-free/css/all.min.css' %}" rel="plugins/stylesheet" />
+    <script src="{% static 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js' %}" crossorigin="anonymous"></script>
+
+        <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <!-- Optional Bootstrap theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+    <!-- Include SmartWizard CSS -->
+    <link href="../../../staticfiles/dist/css/smart_wizard.css" rel="stylesheet" type="text/css" />
+    
+    <!-- Optional SmartWizard theme -->
+    <link href="../../../staticfiles/dist/css/smart_wizard_theme_arrows.css" rel="stylesheet" type="text/css" />
+</head>
+<body class="sb-nav-fixed">
+    
+    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+            
+        <a class="navbar-brand" href="http://127.0.0.1:8000/">CrystalInn&nbsp;&nbsp;&nbsp;&nbsp;<small>Helpline Number:&nbsp;123-456-7890</small></a><button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle"  ><i class="fas fa-bars"></i></button
+        >
+    </nav>
+    
+    <div id="layoutSidenav">
+        <div id="layoutSidenav_nav">
+            <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                <div class="sb-sidenav-menu">
+                    <div class="nav">
+                        <div class="sb-sidenav-menu-heading">Core</div>
+                        
+                        
+                        <div class="sb-nav-link-icon">
+                          <a class="nav-link" href="http://127.0.0.1:8000/">Dashboard</i>
+                          </a>
+                        </div>
+                        <div class="sb-nav-link-icon">
+                            <a class="nav-link" href="/Rooms">Rooms</i>
+                        </div></a>
+
+                    </div> 
+                </div> 
+                <div class="sb-sidenav-footer">
+                    <div class="small">Logged in as:</div>
+                    Start Bootstrap
+                </div>
+            </nav>
+        </div>
+        <div id="layoutSidenav_content">
+            <main>
+                
+                <div class="container-fluid">
+                    <h1 class="mt-4">ROOM</h1> 
+                    <ol class="breadcrumb mb-4">
+                        <li class="breadcrumb-item active">{{roomDetail.room_number}}</li>
+                        
+                    </ol>
+                   
+                    
+                    <div class="container">
+                        <br />
+                    <form action="#" id="myForm" role="form" data-toggle="validator" method="post" accept-charset="utf-8">
+                        {% csrf_token %}           
+                        <!-- SmartWizard html -->
+                        <div id="smartwizard">
+                            <ul>
+                                <li><a href="#step-1">Step 1<br /><small>Furniture</small></a></li>
+                                <li><a href="#step-2">Step 2<br /><small>window and mirrors</small></a></li>
+                                <li><a href="#step-3">Step 3<br /><small>closet</small></a></li>
+                                <li><a href="#step-4">Step 4<br /><small>TV set</small></a></li>
+                                <li><a href="#step-5">Step 5<br /><small>Doors</small></a></li>
+                                <li><a href="#step-6">Step 6<br /><small>Bedding</small></a></li>
+                                <li><a href="#step-7">Step 7<br /><small>Phone</small></a></li>
+                                <li><a href="#step-8">Step 8<br /><small>AC</small></a></li>
+                                <li><a href="#step-9">Step 9<br /><small>Bathroom</small></a></li>
+                                <li><a href="#step-10">Step 10<br /><small>General</small></a></li>
+                                <li><a href="#step-11">Step 11<br /><small>safety</small></a></li>
+                            </ul>
+                            
+                            <div>
+                                {% if error_message %}
+                                <p class="bg-danger p-d ml-b">{{ error_message }}</p>
+                            {% endif %}
+                                <div id="step-1">
+                                    <h2>Furniture</h2>
+                                    
+                                    
+                                    <div id="form-step-0" role="form" data-toggle="validator">
+                                        <div class="form-group">
+                                            <br> <br><label for="{{ form.roomnumber.id_for_label }}"> roomnumber {{ form.roomnumber }}</label>
+                                            <!-- <input id="id_roomnumber" type="text" name="form.roomnumber" value="{{roomDetail.room_number}}"> -->
+                                            <br> <br><label for="{{ form.Bedding.id_for_label }}">Bedding  {{ form.Bedding }}</label>
+                                            <br> <br><label for="{{ form.comment.id_for_label }}">comment</label>
+                                            {{ form.comment }}
+                                            <br> <br><label for="{{ form.comment1.id_for_label }}">comment1</label>
+                                            {{ form.comment1 }}
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                      
+                                        
+                      </form>
+                                    
+                            <!-- </div>
+                                <div id="step-2">
+                                    <h2>Your Name</h2>
+                                        
+                                            {% csrf_token %}
+                                          
+                                            {{ form.non_field_errors }}
+                                          
+                                            {{ form.source.errors }}
+                                            {{ form.source }}
+                                          
+                                            <table border="1">
+                                          
+                                                <tr>
+                                                  <th>{{ form.comment.label_tag }}</th>
+                                                  <td>
+                                                    {{ form.name.errors }}
+                                                    {{ form.comment }}
+                                                  </td>
+                                                </tr>
+                                            </table>    
+                                          
+                                            
+                                        
+                                </div> -->
+                                <!-- <div id="step-3">
+                                    <h2>Your Name</h2>
+                                        <form method="post" novalidate>
+                                            {% csrf_token %}
+                                          
+                                            {{ form.non_field_errors }}
+                                          
+                                            {{ form.source.errors }}
+                                            {{ form.source }}
+                                          
+                                            <table border="1">
+                                          
+                                                <tr>
+                                                  <th>{{ form.comment.label_tag }}</th>
+                                                  <td>
+                                                    {{ form.name.errors }}
+                                                    {{ form.comment }}
+                                                  </td>
+                                                </tr>
+                                            </table>    
+                                          
+                                           
+                                          </form>
+                                </div> -->
+                                </div>
+                            
+                            </div>
+                        </div>
+                        
+                    </form>
+                        
+                    </div>
+                </div>
+                
+              </main> 
+        </div> 
+     </div>
+     <footer class="py-4 bg-light mt-auto">
+        <div class="container-fluid">
+            <div class="d-flex align-items-center justify-content-between small">
+                <div class="text-muted">Copyright &copy; Your Website 2019</div>
+                <div>
+                    <a href="#">Privacy Policy</a>
+                    &middot;
+                    <a href="#">Terms &amp; Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+    
+    <!-- Include jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Include jQuery Validator plugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.5/validator.min.js"></script>
+    
+
+    <!-- Include SmartWizard JavaScript source -->
+    <script type="text/javascript" src="../../../staticfiles/dist/js/jquery.smartWizard.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            
+            // Toolbar extra buttons
+            var btnFinish = $('<button></button>').text('Finish')
+                                             .addClass('btn btn-info')
+                                             .on('click', function(){ 
+                                                    if( !$(this).hasClass('disabled')){ 
+                                                        var elmForm = $("#myForm");
+                                                        if(elmForm){
+                                                            elmForm.validator('validate'); 
+                                                            var elmErr = elmForm.find('.has-error');
+                                                            if(elmErr && elmErr.length > 0){
+                                                                alert('Oops we still have error in the form');
+                                                                return false;    
+                                                            }else{
+                                                                alert('Great! we are ready to submit form');
+                                                                elmForm.submit();
+                                                                return false;
+                                                            }
+                                                        }
+                                                    }
+                                                });
+            var btnCancel = $('<button></button>').text('Cancel')
+                                             .addClass('btn btn-danger')
+                                             .on('click', function(){ 
+                                                    $('#smartwizard').smartWizard("reset"); 
+                                                    $('#myForm').find("input, textarea").val(""); 
+                                                });                         
+            
+            
+            
+            // Smart Wizard
+            $('#smartwizard').smartWizard({ 
+                    selected: 0, 
+                    theme: 'arrows',
+                    transitionEffect:'fade',
+                    toolbarSettings: {toolbarPosition: 'bottom',
+                                      toolbarExtraButtons: [btnFinish, btnCancel]
+                                    },
+                    anchorSettings: {
+                                markDoneStep: true, // add done css
+                                markAllPreviousStepsAsDone: true, // When a step selected by url hash, all previous steps are marked done
+                                removeDoneStepOnNavigateBack: true, // While navigate back done step after active step will be cleared
+                                enableAnchorOnDoneStep: true // Enable/Disable the done steps navigation
+                            }
+                 });
+            
+            $("#smartwizard").on("leaveStep", function(e, anchorObject, stepNumber, stepDirection) {
+                var elmForm = $("#form-step-" + stepNumber);
+                // stepDirection === 'forward' :- this condition allows to do the form validation 
+                // only on forward navigation, that makes easy navigation on backwards still do the validation when going next
+                if(stepDirection === 'forward' && elmForm){
+                    elmForm.validator('validate'); 
+                    var elmErr = elmForm.children('.has-error');
+                    if(elmErr && elmErr.length > 0){
+                        // Form validation failed
+                        return false;    
+                    }
+                }
+                return true;
+            });
+            
+            $("#smartwizard").on("showStep", function(e, anchorObject, stepNumber, stepDirection) {
+                // Enable finish button only on last step
+                if(stepNumber == 3){ 
+                    $('.btn-finish').removeClass('disabled');  
+                }else{
+                    $('.btn-finish').addClass('disabled');
+                }
+            });                               
+            
+        });   
+    </script>  
+</body>
+</html>
