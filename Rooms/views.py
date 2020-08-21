@@ -3,7 +3,7 @@ from django.shortcuts import HttpResponse
 from .models import room
 from .models import deepclean
 from .forms import deepcleanlists
-
+from .models import Test
 # Create your views here.
 
 
@@ -90,9 +90,16 @@ def Detail_Report(request):
 
      
 
+def test(request):
+     if request.method == 'POST':
+      if request.POST.get('comment') and request.POST.get('comment1'):
+          post=Test()
+          post.comment=request.POST.get('comment')
+          post.comment1=request.POST.get('comment1')
+          post.save()
+
+          return render(request,'Rooms/Test.html')
+     else:
+           return render(request,'Rooms/Test.html')
 
 
-
-
-
-     

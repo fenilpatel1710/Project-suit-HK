@@ -79,6 +79,10 @@ class deepclean(models.Model):
 def __str__(self): 
         return self.roomnumber
 
+
+class  Test(models.Model):
+    comment = models.CharField(max_length=140)
+    comment1 = models.CharField(max_length=140)
     
 
 
