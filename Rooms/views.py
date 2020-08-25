@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.shortcuts import HttpResponse
 from .models import room
-from .models import Roomclean
+from .models import RoomClean
 from .forms import Roomcleanlists
 from .models import Test
 # Create your views here.
@@ -83,7 +83,7 @@ def room_status(request,room_status):
 
 def Detail_Report(request):
 
-     DetailReport = Roomclean.objects.all()
+     DetailReport = RoomClean.objects.all()
 
      return render(request, 'Rooms/Report.html', {'DetailReport':DetailReport})
 
