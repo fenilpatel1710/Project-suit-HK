@@ -1,10 +1,10 @@
 from django import forms
-from Rooms.models import deepclean
+from Rooms.models import Roomclean
 
-class deepcleanlists (forms.ModelForm):
+class Roomcleanlists (forms.ModelForm):
     
 
     class Meta: 
-        model = deepclean
+        model = Roomclean
         fields = '__all__'
  

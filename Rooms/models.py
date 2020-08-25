@@ -66,12 +66,17 @@ class room(models.Model):
     def __str__ (self):
         return self.room_number
 
-class deepclean(models.Model):
-    date = models.DateTimeField(auto_now_add=True, blank=True)
-    roomnumber = models.CharField (max_length=140, default='')
-    Bedding = models.BooleanField()
-    comment = models.CharField(max_length=140)
-    comment1 = models.CharField(max_length=140)
+class Roomclean(models.Model):
+    Date = models.DateTimeField(auto_now_add=True, blank=True)
+    Roomnumber = models.CharField (max_length=140, default='')
+    Clean_Under_Bedding = models.BooleanField()
+    Insects_Check = models.BooleanField()
+    replace_Bedspread = models.BooleanField()
+    replace_Pillow_Covers = models.BooleanField()
+    Clean_Replace_Blankets = models.BooleanField()
+    Comment_For_Bedding= models.CharField(max_length=140)
+    Clean_Windows = models.BooleanField()
+    Clean_Mirrors = models.BooleanField()
 
     objects = models.Manager()
 
@@ -83,6 +88,8 @@ def __str__(self):
 class  Test(models.Model):
     comment = models.CharField(max_length=140)
     comment1 = models.CharField(max_length=140)
+    def __str__(self):
+     return self.comment    
     
 
 
