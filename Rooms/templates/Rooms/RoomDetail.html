@@ -73,7 +73,7 @@
                         <!-- SmartWizard html -->
                         <div id="smartwizard">
                             <ul>
-                                <li><a href="#step-1">Step 1<br /><small>Furniture</small></a></li>
+                                <li><a href="#step-1">Step 1<br /><small>Bedding</small></a></li>
                                 <li><a href="#step-2">Step 2<br /><small>window and mirrors</small></a></li>
                                 <li><a href="#step-3">Step 3<br /><small>closet</small></a></li>
                                 <li><a href="#step-4">Step 4<br /><small>TV set</small></a></li>
@@ -91,21 +91,62 @@
                                 <p class="bg-danger p-d ml-b">{{ error_message }}</p>
                             {% endif %}
                                 <div id="step-1">
-                                    <h2>Furniture</h2>
+                                    <h2>Bediing</h2>
                                     
                                     
                                     <div id="form-step-0" role="form" data-toggle="validator">
                                         <div class="form-group">
-                                            <br> <br><label for="{{ form.roomnumber.id_for_label }}"> roomnumber {{ form.roomnumber }}</label>
+                                            <br> <br><label for="{{ form.roomnumber.id_for_label }}"> Room Number {{ form.roomnumber }}</label>
                                             <!-- <input id="id_roomnumber" type="text" name="form.roomnumber" value="{{roomDetail.room_number}}"> -->
-                                            <br> <br><label for="{{ form.Bedding.id_for_label }}">Bed {{ form.Bedding }}</label>
-                                            <br> <br><label for="{{ form.comment.id_for_label }}">comment</label> {{ form.comment }}
-                                            <br> <br><label for="{{ form.comment1.id_for_label }}">comment1</label> {{ form.comment1 }}
+                                            <br> <br><label for="{{ form.Clean_Under_Bedding.id_for_label }}"> Clean under Bed {{ form.Clean_Under_Bedding }}</label>
+                                            <br> <br><label for="{{ form.Insects_Check.id_for_label }}">Insects Check on Bed </label> {{ form.Insects_Check }}
+                                            <br> <br><label for="{{ form.replace_Bedspread.id_for_label }}">Change Bedspread</label> {{ form.replace_Bedspread }}
+                                            <br> <br><label for="{{ form.replace_Pillow_Covers.id_for_label }}">Change Pillow Cover </label> {{ form.replace_Pillow_Covers }}
+                                            <br> <br><label for="{{ form.Clean_Replace_Blankets.id_for_label }}">Change Blankets </label> {{ form.Clean_Replace_Blankets }}
+                                            <br> <br><label for="{{ form.Clean_Night_Stand.id_for_label }}"> Clean Night Stand </label> {{ form.Clean_Night_Stand }}
+
                                             <div class="help-block with-errors"></div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                                {% if error_message %}
+                                <p class="bg-danger p-d ml-b">{{ error_message }}</p>
+                            {% endif %}
+                                <div id="step-2">
+                                    <h2>Windows And Mirrors</h2>
+                                    
+                                    
+                                    <div id="form-step-0" role="form" data-toggle="validator">
+                                        <div class="form-group">
+                                            <br> <br><label for="{{ form.Clean_Windows.id_for_label }}"> Clean Windows {{ form.Clean_Windows }}</label>
+                                            <br> <br><label for="{{ form.Clean_Curtain.id_for_label }}">Clean Curtains </label> {{ form.Clean_Curtain }}
+                                            <br> <br><label for="{{ form.Clean_Mirrors.id_for_label }}">Clean Mirrors</label> {{ form.Clean_Mirrors }}
+
+
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% if error_message %}
+                                <p class="bg-danger p-d ml-b">{{ error_message }}</p>
+                            {% endif %}
+                                <div id="step-3">
+                                    <h2>Closet</h2>
+                                    
+                                    
+                                    <div id="form-step-0" role="form" data-toggle="validator">
+                                        <div class="form-group">
+                                            <br> <br><label for="{{ form.Clean_Windows.id_for_label }}"> Clean Windows {{ form.Clean_Windows }}</label>
+                                            <br> <br><label for="{{ form.Clean_Curtain.id_for_label }}">Clean Curtains </label> {{ form.Clean_Curtain }}
+                                            <br> <br><label for="{{ form.Clean_Mirrors.id_for_label }}">Clean Mirrors</label> {{ form.Clean_Mirrors }}
+
+
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>  1
+                            
                                       
                                         
                       </form>
