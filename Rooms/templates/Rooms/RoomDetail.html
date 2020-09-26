@@ -76,8 +76,8 @@
                                 <li><a href="#step-1">Step 1<br /><small>Bedding</small></a></li>
                                 <li><a href="#step-2">Step 2<br /><small>window and mirrors</small></a></li>
                                 <li><a href="#step-3">Step 3<br /><small>closet</small></a></li>
-                                <li><a href="#step-4">Step 4<br /><small>TV set</small></a></li>
-                                <li><a href="#step-5">Step 5<br /><small>Doors</small></a></li>
+                                <li><a href="#step-4">Step 4<br /><small>Furniture</small></a></li>
+                                <li><a href="#step-5">Step 5<br /><small>TV</small></a></li>
                                 <li><a href="#step-6">Step 6<br /><small>Bedding</small></a></li>
                                 <li><a href="#step-7">Step 7<br /><small>Phone</small></a></li>
                                 <li><a href="#step-8">Step 8<br /><small>AC</small></a></li>
@@ -118,10 +118,9 @@
                                     
                                     <div id="form-step-0" role="form" data-toggle="validator">
                                         <div class="form-group">
-                                            <br> <br><label for="{{ form.Clean_Windows.id_for_label }}"> Clean Windows {{ form.Clean_Windows }}</label>
+                                            <br> <br><label for="{{ form.Hanger_Regular.id_for_label }}"> Clean Windows {{ form.Clean_Windows }}</label>
                                             <br> <br><label for="{{ form.Clean_Curtain.id_for_label }}">Clean Curtains </label> {{ form.Clean_Curtain }}
                                             <br> <br><label for="{{ form.Clean_Mirrors.id_for_label }}">Clean Mirrors</label> {{ form.Clean_Mirrors }}
-
 
                                             <div class="help-block with-errors"></div>
                                         </div>
@@ -136,11 +135,45 @@
                                     
                                     <div id="form-step-0" role="form" data-toggle="validator">
                                         <div class="form-group">
-                                            <br> <br><label for="{{ form.Clean_Windows.id_for_label }}"> Clean Windows {{ form.Clean_Windows }}</label>
-                                            <br> <br><label for="{{ form.Clean_Curtain.id_for_label }}">Clean Curtains </label> {{ form.Clean_Curtain }}
-                                            <br> <br><label for="{{ form.Clean_Mirrors.id_for_label }}">Clean Mirrors</label> {{ form.Clean_Mirrors }}
-
-
+                                            <br> <br><label for="{{ form.Hanger_Regular.id_for_label }}"> Regular Hanger {{ form.Hanger_Regular }}</label>
+                                            <br> <br><label for="{{ form.Hanger_clipper.id_for_label }}"> Clipper Hanger </label> {{ form.Hanger_clipper }}
+                                            
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% if error_message %}
+                                <p class="bg-danger p-d ml-b">{{ error_message }}</p>
+                            {% endif %}
+                                <div id="step-4">
+                                    <h2>Furniture</h2>
+                                    
+                                    
+                                    <div id="form-step-0" role="form" data-toggle="validator">
+                                        <div class="form-group">
+                                            <br> <br><label for="{{ form.Clean_Tv_Furniture.id_for_label }}"> Clean Tv Furniture {{ form.Clean_Tv_Furniture }}</label>
+                                            <br> <br><label for="{{ form.Clean_Tv_Under_Furniture.id_for_label }}"> Clean Under TV Furniture </label> {{ form.Clean_Tv_Under_Furniture }}
+                                            <br> <br><label for="{{ form.Clean_Tv_Furniture_drawers.id_for_label }}"> Clean Tv Furniture drawers </label> {{ form.Clean_Tv_Furniture_drawers }}
+                                            <br> <br><label for="{{ form.Clean_Desk_Furniture.id_for_label }}"> Clean Desk Furniture </label> {{ form.Clean_Desk_Furniture }}
+                                            <br> <br><label for="{{ form.Clean_Desk_Chair.id_for_label }}"> Clean Desk Chair </label> {{ form.Clean_Desk_Chair}}
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% if error_message %}
+                                <p class="bg-danger p-d ml-b">{{ error_message }}</p>
+                            {% endif %}
+                                <div id="step-5">
+                                    <h2>Doors</h2>
+                                    
+                                    
+                                    <div id="form-step-0" role="form" data-toggle="validator">
+                                        <div class="form-group">
+                                            <br> <br><label for="{{ form.Clean_Tv_Furniture.id_for_label }}"> Clean Tv Furniture {{ form.Clean_Tv_Furniture }}</label>
+                                            <br> <br><label for="{{ form.Clean_Tv_Under_Furniture.id_for_label }}"> Clean Under TV Furniture </label> {{ form.Clean_Tv_Under_Furniture }}
+                                            <br> <br><label for="{{ form.Clean_Tv_Furniture_drawers.id_for_label }}"> Clean Tv Furniture drawers </label> {{ form.Clean_Tv_Furniture_drawers }}
+                                            <br> <br><label for="{{ form.Clean_Desk_Furniture.id_for_label }}"> Clean Desk Furniture </label> {{ form.Clean_Desk_Furniture }}
+                                            <br> <br><label for="{{ form.Clean_Desk_Chair.id_for_label }}"> Clean Desk Chair </label> {{ form.Clean_Desk_Chair}}
                                             <div class="help-block with-errors"></div>
                                         </div>
                                     </div>
